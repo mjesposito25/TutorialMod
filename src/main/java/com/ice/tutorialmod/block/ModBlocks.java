@@ -1,6 +1,7 @@
 package com.ice.tutorialmod.block;
 
 import com.ice.tutorialmod.TutorialMod;
+import com.ice.tutorialmod.block.custom.SpeedyBlock;
 import com.ice.tutorialmod.item.ModCreativeModeTab;
 import com.ice.tutorialmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -30,6 +31,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CITRINE_ORE = registerBlock("citrine_ore",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(5f)
+                    .requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
+
+    public static final RegistryObject<Block> SPEEDY_BLOCK = registerBlock("speedy_block",
+            () -> new SpeedyBlock(BlockBehaviour.Properties.of(Material.STONE).strength(4f)
                     .requiresCorrectToolForDrops()), ModCreativeModeTab.TUTORIAL_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block,
